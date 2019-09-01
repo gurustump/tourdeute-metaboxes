@@ -16,9 +16,9 @@ Author URI: http://www.guru.com
 if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
-// Example usage
-// add_action( 'cmb2_init', 'guru_register_page_metabox' );
-/*
+
+add_action( 'cmb2_init', 'guru_register_page_metabox' );
+
 function guru_register_page_metabox() {
 	$prefix = '_guru_page_';
 	
@@ -34,87 +34,14 @@ function guru_register_page_metabox() {
 	) );
 
 	$cmb_page_box->add_field( array(
-		'name'		=> __( 'Index Gallery', 'cmb2' ),
-		'desc' => __( 'Select images to be used for the background on the heading area of an index page', 'cmb2' ),
-		'id'			=> $prefix . 'index_gallery',
-		'type'		=> 'file_list',
-	) );
-
-	$cmb_page_box->add_field( array(
-		'name'		=> __( 'Index Submenu', 'cmb2' ),
-		'desc' => __( 'Enter the name of the Wordpress menu that you want to appear as a submenu on this page', 'cmb2' ),
-		'id'			=> $prefix . 'submenu',
-		'type'		=> 'text',
-	) );
-
-	$cmb_page_box->add_field( array(
-		'name'		=> __( 'Custom Post Type Select', 'cmb2' ),
-		'desc' => __( "Select a custom post type the posts of which will be listed on this page", 'cmb2' ),
-		'id'			=> $prefix . 'post_type',
-		'type'		=> 'select',
-		'show_option_none' => true,
-		'default' => 'none',
-		'options' => array(
-			'equipment' => __( 'Equipment', 'cmb2' ),
-			'websites' => __( 'Websites', 'cmb2' ),
-		),
-	) );
-	$cmb_page_box->add_field( array(
-		'name'		=> __( 'Custom Post Type Heading', 'cmb2' ),
-		'desc' => __( 'Enter the heading for the above selected list of custom post type items', 'cmb2' ),
-		'id'			=> $prefix . 'post_type_heading',
-		'type'		=> 'text',
-	) );
-	$cmb_page_box->add_field( array(
-		'name'		=> __( 'Custom Post Type Description', 'cmb2' ),
-		'desc' => __( 'Enter an excerpt that will appear above the list of above selected custom post type items', 'cmb2' ),
-		'id'			=> $prefix . 'post_type_description',
-		'type'		=> 'wysiwyg',
-	) );
-
-	$cmb_page_box->add_field( array(
-		'name'		=> __( 'File Embed', 'cmb2' ),
-		'desc' => __( "Use to reveal a single file to the front end from Wordpress' Media area. Used on index pages to load a video.", 'cmb2' ),
-		'id'			=> $prefix . 'file',
+		'name'		=> __( 'Background Image', 'cmb2' ),
+		'desc' => __( 'Add a background image to the page', 'cmb2' ),
+		'id'			=> $prefix . 'page_bg',
 		'type'		=> 'file',
 	) );
 
-	$cmb_page_box->add_field( array(
-		'name'             => __( 'Gallery Type', 'cmb2' ),
-		'desc'             => __( "If any galleries appear on the page, this determines the gallery's layout between standard thumbs and movie thumbs", 'cmb2' ),
-		'id'               => $prefix . 'gallery_type',
-		'type'             => 'select',
-		'show_option_none' => false,
-		'options'          => array(
-			'standard-gallery'  => __( 'Standard Gallery', 'cmb2' ),
-			'movie-gallery' 	=> __( 'Movie Gallery', 'cmb2' ),
-		),
-	) );
-	
-	$randomizer_group_field = $cmb_page_box->add_field( array(
-		'id'          => $prefix . 'randomizer',
-		'type'        => 'group',
-		'description' => __( 'Add list of items to be randomly selected from among', 'cmb2' ),
-		'options'     => array(
-			'group_title'   => __( 'Item {#}', 'cmb2' ), // {#} gets replaced by row number
-			'add_button'    => __( 'Add Another Item', 'cmb2' ),
-			'remove_button' => __( 'Remove Item', 'cmb2' ),
-			'sortable'      => true, // beta
-		),
-	) );
-	$cmb_page_box->add_group_field( $randomizer_group_field, array(
-		'name'       => __( 'Item Title', 'cmb2' ),
-		'id'         => 'title',
-		'type'       => 'text',
-	) );
-	$cmb_page_box->add_group_field( $randomizer_group_field, array(
-		'name'       => __( 'Item Likelihood Modifier', 'cmb2' ),
-		'id'         => 'likelihood_modifier',
-		'type'       => 'text_small',
-	) );
-
 }
-*/
+
 
 add_action( 'cmb2_init', 'guru_register_video_metabox' );
 
