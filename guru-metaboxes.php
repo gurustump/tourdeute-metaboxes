@@ -85,10 +85,10 @@ function guru_register_person_metabox() {
 	) );
 
 	$cmb_person_box->add_field( array(
-		'name' => __( 'Personal Home Page', 'cmb2' ),
-		'desc' => __( "Enter the URL of the person's home page", 'cmb2' ),
-		'id'   => $prefix . 'homepage_url',
-		'type' => 'text_url',
+		'name' => __( 'Title', 'cmb2' ),
+		'desc' => __( "Enter the person's official title", 'cmb2' ),
+		'id'   => $prefix . 'title',
+		'type' => 'text',
 		'protocols' => array('http', 'https'), // Array of allowed protocols
 	) );
 
