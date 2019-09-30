@@ -40,6 +40,13 @@ function guru_register_page_metabox() {
 		'type'		=> 'file',
 	) );
 
+	$cmb_page_box->add_field( array(
+		'name'		=> __( 'Body Class', 'cmb2' ),
+		'desc' => __( 'For applying special styles to a page, add additional class names to the <body> tag here. If you are uncertain what this does, it is recommended that you leave this alone, as this could break the page.', 'cmb2' ),
+		'id'			=> $prefix . 'body_class',
+		'type'		=> 'text',
+	) );
+
 }
 
 
