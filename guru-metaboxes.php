@@ -151,20 +151,31 @@ function guru_register_main_options_metabox() {
 add_action( 'cmb2_admin_init', 'guru_register_main_options_metabox' );
 
 
-function guru_register_module_metabox() {
-	$prefix = '_guru_module_';
 
-	$cmb_module_box = new_cmb2_box( array(
-		'id'           => $prefix.'metabox',
-		'title'        => __( 'Module Information', 'cmb2' ),
-		'object_types' => array( 'modules' ), // Post type
-		'context'      => 'normal',
-		'priority'     => 'high',
-		'show_names'   => true, // Show field names on the left
+
+add_action( 'cmb2_init', 'guru_register_resource_metabox' );
+
+function guru_register_resource_metabox() {
+	$prefix = '_guru_resource_';
+	
+	$cmb_resource_box = new_cmb2_box( array(
+		'id'            => $prefix . 'metabox',
+		'title'         => __( 'Other Resource Fields', 'cmb2' ),
+		'object_types'  => array( 'resource'), // Post type
+		'context'       => 'normal',
+		'priority'      => 'high',
+		'show_names'    => true, // Show field names on the left
+		// 'cmb_styles' => false, // false to disable the CMB stylesheet
+		// 'closed'     => true, // true to keep the metabox closed by default
 	) );
 
+	$cmb_resource_box->add_field( array(
+		'name'		=> __( 'Resource File', 'cmb2' ),
+		'desc' => __( 'Upload a PDF file that will be available for download on the Resource page', 'cmb2' ),
+		'id'			=> $prefix . 'resource_file',
+		'type'		=> 'file',
+	) );
 }
-add_action( 'cmb2_init', 'guru_register_module_metabox' );
 
 
 ?>
